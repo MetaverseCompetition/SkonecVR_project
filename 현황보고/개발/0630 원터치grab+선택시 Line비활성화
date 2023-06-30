@@ -1,0 +1,59 @@
+원터치grab을 적용시키고 싶은 오브젝트에 아래 스크립트 추가.
+
+
+
+
+using System.Collections;
+using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectGrip : XRGrabInteractable
+{
+    private XRBaseInteractor interactor; // 현재 상호작용 중인 인터랙터
+    private Quaternion initialAttachRotation; // 초기 attach transform의 회전값 저장 변수
+    private bool isGripPressed = false; // grip 버튼이 눌려있는지 여부 확인 변수
+    private XRInteractorLineVisual LineRender;  //라인비주얼 : Line Render해주는 스크립트 
+
+    protected override void OnSelectEntered(XRBaseInteractor interactor)  //interactor에는 손 컨트롤러가 들어간다.
+    {
+        base.OnSelectEntered(interactor);
+
+        // 초기 attach transform의 회전값 저장
+        initialAttachRotation = attachTransform.localRotation;
+
+        this.interactor = interactor; // 현재 상호작용 중인 인터랙터 저장
+        isGripPressed = true; // grip 버튼이 눌려있음을 설정
+        LineRender = interactor.gameObject.GetComponent<XRInteractorLineVisual>();
+        LineRender.enabled = false;
+    }
+
+    protected override void OnSelectExited(XRBaseInteractor interactor)
+    {
+        base.OnSelectExited(interactor);
+
+        this.interactor = interactor; // 인터랙터 계속할당해주자.
+        isGripPressed = true; // grip 버튼이 눌려있지 않음을 설정
+
+    }
+
+    private void Update()
+    {
+        if (interactor != null)
+        {
+            // 인터랙터 위치에 물체를 고정
+            transform.position = interactor.transform.position;
+
+            // 인터랙터의 회전과 초기 attach transform의 회전값을 합성하여 물체에 회전을 적용
+            Quaternion newRotation = interactor.transform.rotation * Quaternion.Inverse(initialAttachRotation);
+            transform.rotation = newRotation;
+        }
+        else if (isGripPressed)
+        {
+            // grip 버튼이 눌려있는 상태에서 물체를 놓아도 계속 쥐고 있는 상태를 유지
+            transform.position = attachTransform.position;
+            transform.rotation = attachTransform.rotation;
+        }
+    }
+}
+
