@@ -1,0 +1,14 @@
+
+1.프리팹다운로드
+
+2.sword skill스크립트 추가
+
+나머지는 똒같고 추가된거만 바꾸면됨
+
+
+
+Can Charge UI - 그냥 차징가능하다고 알려주는 txt
+Wait Charge UI - 차징대기중 text ui
+
+charge Effect - 올려준것에서 다운받아서 할당(magic charge green).
+ora Effect-올려준것에서 다운받아서 할당(plane)
