@@ -1,0 +1,26 @@
+
+1.SwapWeapon이라는 빈오브젝트생성, 자식옵젝트로 bow모델프리팹 
+
+2.swapWeapon스크립트적용
+
+Controller에 LeftHandController넣어주기
+Rayinteractor에 RighthandContoller(XR Ray Interactor)
+Direct Interactor에 RightHand Controller-Direct(XR Direct Interactor)->이건없으므로 
+Xr origin 하위의 오른쪽 컨트롤러 쪽에 Direct용 손 한개 더 만들어놓고 비활성화 시켜야함.
+
+Weapons에 
+elemnet 0 -bow
+element 1-big magisword_ice
+
+weaponui
+element 0-I
+1 -A
+2 - W
+3-M
+
+SwapWeapons
+0-Empty(그냥 빈오브젝트)
+1-Bow
+
+UI에 몬스터 생성할때 띄울 UI 오브젝트 넣어주면됨.
+
