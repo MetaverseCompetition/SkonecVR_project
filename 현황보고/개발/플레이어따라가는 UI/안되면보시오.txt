@@ -1,0 +1,4 @@
+안되면 이것을 보시오
+
+
+canvas의 canvas컴포넌트의 rendermode를 worldspace로 해줘야 보입니다. 
