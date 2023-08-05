@@ -1,0 +1,8 @@
+2. 개발환경 및 개발언어
+
+개발언어 : C#
+플랫폼: Android platform
+운영체제 : Windows
+툴 및 IDE : Unity3D,Visual Studio
+SDK :XR Interaction Toolkits
+버전 : Unity 2022.3.41f
