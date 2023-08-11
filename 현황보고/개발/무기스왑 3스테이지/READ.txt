@@ -1,0 +1,21 @@
+<3스테이지 무기스왑 적용>
+
+1. Left Hand Controller,RightHand Controller,RightHand Direct Controller의 Layer을 Hand로 설정
+(자식도 모두)
+
+1-1. Body Collider의 Layer Body로 설정
+
+2. 활,magic Staff, Magic Sword의 Layer을 Weapon으로 설정 (only this object만)
+Bow는 PlankBow(보우 잡는부분), string(줄)까지 weapon으로 설정
+
+3.swap Weapon 사진대로 할당
+
+4. 프로젝트 세팅s - Physics에서 Body와 Weapon 물리 체크 해제
+ 
+5.swapWeapon에 할당하는 UI들은 1스테이지 --UI 복사해서 씬에 배치하고 할당해주기
+
+6. 마법지팡이로 마법 그릴려면 Object Spawner가 씬에 존재해야하고 magic STaff 오브젝트의 moverecognizer의 
+
+OnRecognized부분에 연결해줘야함 ( 사진넣었으니까 참고, Object Spanwer은 2스테이지꺼 복붙해오기)
+
+
