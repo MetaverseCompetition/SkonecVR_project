@@ -1,0 +1,2 @@
+PhysicsRig-XR origin - camera offset - Right HAnd Controller들어가서 - 인스펙터창 XR Ray Interactor 스크립트 부분
+위에서 4번째 Enable Interaction with UI 체크해제

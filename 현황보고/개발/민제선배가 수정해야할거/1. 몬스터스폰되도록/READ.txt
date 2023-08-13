@@ -1,0 +1,30 @@
+
+몬스터 스폰되도록 고치기
+
+Object Grip 스크립트에
+
+위쪽에
+   public GameObject Monsters;
+    public GameObject MosterUI;
+
+아래쪽에
+ public void GetSword()
+    {
+        Monsters.SetActive(true);
+        MosterUI.SetActive(true);
+
+        GetComponent<SwordSkill>().enabled = true;
+
+    }
+
+
+추가 해서 
+
+Monsters에 Monster게임오브젝트
+MonsterUI에 --UI->Canvas->Monster Creat UI 오브젝트 할당
+
+아 이때 몬스터 Monsters 인스펙터창에서 체크했을때 밑에 자식오브젝트들도 한꺼번에 활성화되는지 확인하고 할당하기->가끔 
+밑에 자식오브젝트를 꺼놓는 경우가 있어서 몬스터가 안보일수도있으닝 체크해보기
+
+Sword의 인스펙터창의 Object Grip ㅅ크릡트 중에 Selected Entered 이벤트에 칼에 적용되어있는 오브젝트 그립 할당해주고
+GetSword()함수 연결해주기

@@ -1,0 +1,11 @@
+
+
+깜빡거림 줄이기
+
+1.Edit-Project Settings- Graphics들어가기
+2.Scriptable Render Pipeline settings에 할당되어있는 거 더블클릭하기
+3.그럼 Instpector창에 그 에셋이 열릴거임
+4.이때  Quality 부분에서 HDR 체크해제하고 Anti Aliasing을 Disable로 해주기
+
+
+몰갰으면 카톡방에 영상잉쓰니까 영상보기
